@@ -5,10 +5,11 @@ class Home extends Component {
     return (
       <div>
         home
-        <Tabbar />
+        {/* <Tabbar /> 组件形式这样引用 */}
       </div>
     );
   }
 }
-
-export default Home;
+// 组件形式这样导出
+// export default Home; 
+export default Tabbar(Home);

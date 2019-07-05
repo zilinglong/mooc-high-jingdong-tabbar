@@ -6,10 +6,9 @@ class Car extends Component {
     return (
       <div>
         Car
-        <Tabbar />
       </div>
     );
   }
 }
 
-export default Car;
+export default Tabbar(Car);

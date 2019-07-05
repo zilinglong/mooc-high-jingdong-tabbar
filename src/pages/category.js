@@ -6,10 +6,9 @@ class Category extends Component {
     return (
       <div>
         Category
-        <Tabbar />
       </div>
     );
   }
 }
 
-export default Category;
+export default Tabbar(Category);

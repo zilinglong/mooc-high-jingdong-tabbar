@@ -6,10 +6,9 @@ class User extends Component {
     return (
       <div>
         User
-        <Tabbar />
       </div>
     );
   }
 }
 
-export default User;
+export default Tabbar(User);
