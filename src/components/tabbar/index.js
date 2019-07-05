@@ -23,7 +23,7 @@ const tarbarArr = [
     link: '/user'
   }
 ];
-const Tabbar = (WrappedComponent) =>
+const Tabbar = WrappedComponent =>
   class Tabbar extends Component {
     constructor(props) {
       super(props);
@@ -40,20 +40,26 @@ const Tabbar = (WrappedComponent) =>
       // const { index } = this.state;
       const url = window.location.href;
       return (
-        <div className="tabbar">
-          <div className="tabbar-content">
-            {tarbarArr.map((item, idx) => (
-              <Link
-                to={item.link}
-                className={
-                  'tarbar-item ' + (url.indexOf(item.link) > -1 ? 'active' : '')
-                }
-                key={idx}
-              >
-                <div className={'iconfont ' + item.img} />
-                <div className="">{item.text}</div>
-              </Link>
-            ))}
+        <div className="tabbar-container">
+          <div className="tabbar-children">
+            <WrappedComponent />
+          </div>
+          <div className="tabbar">
+            <div className="tabbar-content">
+              {tarbarArr.map((item, idx) => (
+                <Link
+                  to={item.link}
+                  className={
+                    'tarbar-item ' +
+                    (url.indexOf(item.link) > -1 ? 'active' : '')
+                  }
+                  key={idx}
+                >
+                  <div className={'iconfont ' + item.img} />
+                  <div className="">{item.text}</div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       );
